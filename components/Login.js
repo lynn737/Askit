@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
     if (error) {
       Alert.alert('Login failed', error.message);
     } else {
-      // Success — user will be automatically redirected via auth listener
+
     }
   };
 

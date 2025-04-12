@@ -7,6 +7,8 @@ import AddFolder from './components/AddFolder';
 import Search from './components/Search'; 
 import Folder from './components/Folder';
 import Question from './components/Question'
+import Login from './components/LoginScreen';
+import Signup from './components/SignupScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -14,6 +16,8 @@ const Stack = createNativeStackNavigator();
 function RootStack() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="AddTextQuestion" component={AddTextQuestion} />
 
