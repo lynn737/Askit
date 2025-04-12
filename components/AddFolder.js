@@ -7,14 +7,12 @@ import supabase from '../SupabaseClient';
 
 export default function AddTextQuestion() {
     const navigation = useNavigation()
-    const [text, setText] = useState("")
-    const [folder, setFolder] = useState("")
-    const [answer, setAnswer] = useState("")
+    const [name, setName] = useState("")
 
-    const handleSaveQuestion = async () => {
+    const handleSaveFolder = async () => {
         const {data, error} = await supabase
-            .from('Questions')
-            .insert([{text,answer,folder}])
+            .from('Folders')
+            .insert([{name}])
         if (data) {
             console.log('saved')
         }
@@ -28,16 +26,13 @@ export default function AddTextQuestion() {
 
     return (
         <View style={styles.container}>
-            <Text>Add Text Question</Text>
+            <Text>Add Folder</Text>
             <View style={styles.textInputContainer}>
-                <TextInput label='Question' value={text} onChangeText={text => setText(text)}/>
+                <TextInput label='Folder Name' value={name} onChangeText={name => setName(name)}/>
             </View>
-            <View style={styles.textInputContainer}>
-                <TextInput label='Folder' value={folder} onChangeText={folder => setFolder(folder)}/>
-            </View>
-            <Text>{text}</Text>
-            <Text>{folder}</Text>
-            <Button mode='outlined' onPress={() => {handleSaveQuestion()}}>Save Question</Button>
+            
+            <Text>{name}</Text>
+            <Button mode='outlined' onPress={() => {handleSaveFolder()}}>Save Folder</Button>
             <Button mode='outlined' onPress={()=>{navigation.navigate('HomeScreen')}}>Back To Home</Button>
             
         
