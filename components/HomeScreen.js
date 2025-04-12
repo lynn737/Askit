@@ -61,6 +61,10 @@ export default function HomeScreen() {
             )}
             <Button title='Add text question' onPress={()=>{navigation.navigate('AddTextQuestion')}}></Button>
             <Button title='Add folder' onPress={()=>{navigation.navigate('AddFolder')}}></Button>
+
+        <Text>Home Screen</Text>
+        <Button title='Add text question' onPress={()=>{navigation.navigate('AddTextQuestion')}}></Button>
+        <Button title='View saved questions' onPress={() => navigation.navigate('ViewQuestions')}></Button>
         </View>
     );
 }
@@ -71,5 +75,10 @@ const styles = StyleSheet.create({
         justifyContent: "column",
         alignItems: "center",
         flex: 1
+    },
+    buttonRow: {
+        flexDirection: "row",
+        gap: 10, 
+        marginTop: 20
     }
 })
