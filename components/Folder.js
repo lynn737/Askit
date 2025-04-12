@@ -5,6 +5,8 @@ import { Button, Searchbar } from 'react-native-paper';
 import supabase from '../SupabaseClient';
 
 export default function Folder({route}) {
+    const [unanswered, setUnanswered] = useState([]);
+    const [resolved, setResolved] = useState([]);
     const [questions, setQuestions] = useState([]);
     const navigation = useNavigation();
     const {name} = route.params;
@@ -16,33 +18,39 @@ export default function Folder({route}) {
                 .select('*')
                 .eq('folder',name);
             if (!error) {
-                setQuestions(data);
+                setQuestions(data)
             } else {
                 console.error(error);
             }
         };
         fetchQuestions();
+        console.log('done')
     }, []);
-
-    // const filteredQuestions = questions.filter((q) =>
-    //     q.text.toLowerCase().includes(searchQuery.toLowerCase())
-    // );
+    console.log(questions[0])
 
     const renderItem = ({ item }) => (
-        <View style={styles.questionItem}>
-            <Text style={styles.questionText}>{item.text}</Text>
-        </View>
+            <View style={styles.questionItem}>
+                <Button mode='text' onPress={()=>{navigation.navigate('Question',{question:item})}}>{item.text}</Button>
+            </View>
     );
 
     return (
         <View style={styles.container}>
             <Text style={styles.header}>Saved Questions</Text>
+            
+            {/* {questions.map((question)=>
+                <View styles={styles.questionItem}>
+                     <Button mode='contained' onPress={()=>{navigation.navigate('Question',{question:question})}}>{question.text}</Button>
+                </View>
+                            
+            )} */}
 
             <FlatList
-                data={questions}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.id.toString()}
-            />
+                            data={questions}
+                            renderItem={renderItem}
+                            keyExtractor={(item) => item.id.toString()}
+                        />
+            
             <Button mode='outlined' onPress={() => navigation.navigate('HomeScreen')}>
                 Back To Home
             </Button>

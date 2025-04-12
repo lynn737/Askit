@@ -39,9 +39,7 @@ export default function HomeScreen() {
                 </View>
                 
             )}
-            <Button title='Add text question' onPress={()=>{navigation.navigate('AddTextQuestion')}}></Button>
-            <Button title='Add folder' onPress={()=>{navigation.navigate('AddFolder')}}></Button>
-        
+            
         <Button mode='outlined' onPress={()=>{navigation.navigate('AddTextQuestion')}}>Add text question</Button>
         <Button mode='outlined' onPress={()=>{navigation.navigate('Search')}}>Search</Button>
         </View>
