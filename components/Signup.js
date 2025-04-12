@@ -11,7 +11,7 @@ export default function SignupScreen({ navigation }) {
     if (error) {
       Alert.alert('Signup failed', error.message);
     } else {
-      Alert.alert('Success', 'Check your email to confirm your account!');
+      navigation.navigate('HomeScreen');
     }
   };
 
