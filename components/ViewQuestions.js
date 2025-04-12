@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Button } from 'react-native-paper';
+import { Button, Searchbar } from 'react-native-paper';
 import supabase from '../SupabaseClient';
 
 export default function ViewQuestions() {
     const [questions, setQuestions] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
     const navigation = useNavigation();
 
     useEffect(() => {
@@ -22,6 +23,10 @@ export default function ViewQuestions() {
         fetchQuestions();
     }, []);
 
+    const filteredQuestions = questions.filter((q) =>
+        q.text.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     const renderItem = ({ item }) => (
         <View style={styles.questionItem}>
             <Text style={styles.questionText}>{item.text}</Text>
@@ -31,6 +36,12 @@ export default function ViewQuestions() {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>Saved Questions</Text>
+            <Searchbar
+                placeholder="Search questions"
+                onChangeText={setSearchQuery}
+                value={searchQuery}
+                style={styles.searchBar}
+            />
             <FlatList
                 data={questions}
                 renderItem={renderItem}
@@ -54,6 +65,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 16,
         textAlign: 'center',
+    },
+    searchBar: {
+        marginBottom: 12,
     },
     questionItem: {
         padding: 12,
