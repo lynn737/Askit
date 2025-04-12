@@ -32,7 +32,7 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.container}>
-            <Text>Folders: </Text>
+            <Text style={styles.header}>Folders: </Text>
             {folders.map((folder)=>
                 <View styles={styles.folderButton}>
                     <Button mode='contained' onPress={()=>{navigation.navigate('Folder',{name:folder})}}>{folder}</Button>
@@ -58,4 +58,10 @@ const styles = StyleSheet.create({
         gap: 10, 
         marginTop: 20
     },
+    header: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 16,
+        textAlign: 'center',
+    }
 })

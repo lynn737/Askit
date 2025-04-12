@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
     if (error) {
       Alert.alert('Login failed', error.message);
     } else {
-
+      Alert.alert('Login Succeeded')
     }
   };
 
@@ -20,7 +20,7 @@ export default function LoginScreen({ navigation }) {
       <Text style={styles.header}>Log In</Text>
       <TextInput placeholder="Email" style={styles.input} value={email} onChangeText={setEmail} />
       <TextInput placeholder="Password" secureTextEntry style={styles.input} value={password} onChangeText={setPassword} />
-      <Button title="Login" onPress={handleLogin} />
+      <Button title="Login" onPress={()=>{handleLogin()}} />
       <Text style={styles.switchText}>
         Don’t have an account? <Text onPress={() => navigation.navigate('Signup')} style={styles.link}>Sign up</Text>
       </Text>

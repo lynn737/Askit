@@ -13,6 +13,7 @@ export default function SignupScreen({ navigation }) {
     } else {
       Alert.alert('Success', 'Check your email to confirm your account!');
     }
+    console.log('signup')
   };
 
   return (
@@ -20,7 +21,7 @@ export default function SignupScreen({ navigation }) {
       <Text style={styles.header}>Sign Up</Text>
       <TextInput placeholder="Email" style={styles.input} value={email} onChangeText={setEmail} />
       <TextInput placeholder="Password" secureTextEntry style={styles.input} value={password} onChangeText={setPassword} />
-      <Button title="Sign Up" onPress={handleSignup} />
+      <Button title="Sign Up" onPress={()=>{handleSignup()}} />
       <Text style={styles.switchText}>
         Already have an account? <Text onPress={() => navigation.navigate('Login')} style={styles.link}>Log in</Text>
       </Text>
