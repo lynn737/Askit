@@ -1,7 +1,6 @@
 import {useState,useEffect} from 'react'
 import { View, Text, StyleSheet,Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import AddTextQuestion from './AddTextQuestion';
 import supabase from '../SupabaseClient';
 
 export default function HomeScreen() {
@@ -64,7 +63,7 @@ export default function HomeScreen() {
 
         <Text>Home Screen</Text>
         <Button title='Add text question' onPress={()=>{navigation.navigate('AddTextQuestion')}}></Button>
-        <Button title='View saved questions' onPress={() => navigation.navigate('ViewQuestions')}></Button>
+        <Button title='SearchForQuestion' onPress={() => navigation.navigate('Search')}></Button>
         </View>
     );
 }

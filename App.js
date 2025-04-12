@@ -6,7 +6,7 @@ import AddTextQuestion from './components/AddTextQuestion';
 
 import AddFolder from './components/AddFolder';
 
-import ViewQuestions from './components/ViewQuestions'; 
+import Search from './components/Search'; 
 
 
 const Stack = createNativeStackNavigator();
@@ -19,7 +19,7 @@ function RootStack() {
 
       <Stack.Screen name="AddFolder" component={AddFolder} />
 
-      <Stack.Screen name="ViewQuestions" component={ViewQuestions} />
+      <Stack.Screen name="Search" component={Search} />
 
     </Stack.Navigator>
   );
