@@ -5,14 +5,15 @@ import { useNavigation} from '@react-navigation/native';
 import {TextInput, Button} from 'react-native-paper';
 import supabase from '../SupabaseClient';
 
-export default function AddTextQuestion() {
+export default function AddTextQuestion({route}) {
+    const {username} = route.params;
     const navigation = useNavigation()
     const [name, setName] = useState("")
 
     const handleSaveFolder = async () => {
         const {data, error} = await supabase
             .from('Folders')
-            .insert([{name}])
+            .insert([{name,username}])
         if (data) {
             console.log('saved')
         }
@@ -21,7 +22,7 @@ export default function AddTextQuestion() {
         }
 
        
-        navigation.navigate('HomeScreen')
+        navigation.navigate('HomeScreen',{username:username})
     }
 
     return (

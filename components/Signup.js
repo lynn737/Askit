@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import supabase from '../SupabaseClient';
 
-export default function SignupScreen({ navigation }) {
+export default function SignupScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,7 +15,7 @@ export default function SignupScreen({ navigation }) {
         console.log(error)
     } else {
       console.log('saved')
-      navigation.navigate('HomeScreen')
+      navigation.navigate('HomeScreen',{username:username})
     }
 
 }

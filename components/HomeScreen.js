@@ -4,7 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Button } from 'react-native-paper';
 import supabase from '../SupabaseClient';
 
-export default function HomeScreen() {
+export default function HomeScreen({route}) {
+    const {username} = route.params;
     const navigation = useNavigation()
     const [folders, setFolders] = useState([])
 
@@ -12,6 +13,7 @@ export default function HomeScreen() {
         const {data, error} = await supabase
             .from('Folders')
             .select()
+            .eq('username',username);
         if (data) {
             let tempFolders = []
             for (let folder of data) {
@@ -40,8 +42,9 @@ export default function HomeScreen() {
                 
             )}
             
-        <Button mode='outlined' onPress={()=>{navigation.navigate('AddTextQuestion')}}>Add text question</Button>
-        <Button mode='outlined' onPress={()=>{navigation.navigate('Search')}}>Search</Button>
+        <Button mode='outlined' onPress={()=>{navigation.navigate('AddTextQuestion',{username:username})}}>Add text question</Button>
+        <Button mode='outlined' onPress={()=>{navigation.navigate('AddFolder',{username:username})}}>Add folder</Button>
+        <Button mode='outlined' onPress={()=>{navigation.navigate('Search',{username:username})}}>Search</Button>
         </View>
     );
 }
