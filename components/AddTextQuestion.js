@@ -18,6 +18,7 @@ export default function AddTextQuestion({route}) {
             .insert([{text,answer,folder,username}])
         if (data) {
             console.log('saved')
+            console.log(username)
         }
         if (error) {
             console.log(error)

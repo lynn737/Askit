@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import supabase from '../SupabaseClient';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function SignupScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigation = useNavigation()
   const handleSignup = async () => {
     const {data, error} = await supabase
         .from('Users')

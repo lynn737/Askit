@@ -9,10 +9,12 @@ export default function HomeScreen({route}) {
     const navigation = useNavigation()
     const [folders, setFolders] = useState([])
 
+    //console.log(user)
+
     const getFolders = async () => {
         const {data, error} = await supabase
             .from('Folders')
-            .select()
+            .select(`*, Users(*)`)
             .eq('username',username);
         if (data) {
             let tempFolders = []
