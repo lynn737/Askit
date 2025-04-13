@@ -39,34 +39,39 @@ export default function HomeScreen({route}) {
             <Text style={styles.header}>Folders: </Text>
             {folders.map((folder)=>
                 <View styles={styles.folderButton}>
-                    <Button mode='contained' onPress={()=>{navigation.navigate('Folder',{name:folder})}}>{folder}</Button>
+                    <Button mode='contained' buttonColor="#ff914d" textColor="#000"onPress={()=>{navigation.navigate('Folder',{name:folder})}}>{folder}</Button>
                 </View>
                 
             )}
             
-        <Button mode='outlined' onPress={()=>{navigation.navigate('AddTextQuestion',{username:username})}}>Add text question</Button>
-        <Button mode='outlined' onPress={()=>{navigation.navigate('AddFolder',{username:username})}}>Add folder</Button>
-        <Button mode='outlined' onPress={()=>{navigation.navigate('Search',{username:username})}}>Search</Button>
+        <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('AddTextQuestion',{username:username})}}>Add text question</Button>
+        <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('AddFolder',{username:username})}}>Add folder</Button>
+        <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('Search',{username:username})}}>Search</Button>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#e3d9a8",
-        justifyContent: "column",
+        backgroundColor: "#ffa94d",
+        justifyContent: "center",
         alignItems: "center",
-        flex: 1
+        flex: 1,
+        padding: 20
+    },
+    folderButton: {
+        marginVertical: 8,
+        width: '100%'
     },
     buttonRow: {
-        flexDirection: "row",
-        gap: 10, 
-        marginTop: 20
+        marginTop: 30,
+        width: '100%',
+        gap: 10
     },
     header: {
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 'bold',
-        marginBottom: 16,
-        textAlign: 'center',
+        color: '#000',
+        marginBottom: 20,
     }
 })

@@ -49,14 +49,41 @@ export default function AddTextQuestion({route}) {
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#e3d9a8",
-        justifyContent: "column",
+        backgroundColor: '#ffe0b2',
+        justifyContent: "center",
         alignItems: "center",
+        padding: 20,
         flex: 1
     },
     textInputContainer: {
-        height: 100,
-        width: 200
-    }
+        width: '80%', 
+        marginBottom: 20,
+    },
+    header: {
+        fontSize: 32,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        textAlign: 'center',
+        color: '#000',
+    },
+    input: {
+        height: 50,
+        borderColor: '#000',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        backgroundColor: '#fff',
+    },
+    previewText: {
+        fontSize: 16,
+        color: '#000',
+        marginBottom: 10,
+    },
+    button: {
+        marginTop: 10,
+        width: '80%', 
+        padding: 10,
+        borderRadius: 5,
+    },
     
 })

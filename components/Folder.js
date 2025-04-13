@@ -61,14 +61,15 @@ export default function Folder({route}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f4f4e2',
+        backgroundColor: '#ffe0b2',  
         padding: 16,
     },
     header: {
-        fontSize: 24,
+        fontSize: 32,
         fontWeight: 'bold',
         marginBottom: 16,
         textAlign: 'center',
+        color: '#000',
     },
     searchBar: {
         marginBottom: 12,
@@ -85,5 +86,14 @@ const styles = StyleSheet.create({
     },
     questionText: {
         fontSize: 16,
+        color: '#000',
+    },
+    textButton: {
+        color: '#ff914d',  
+    },
+    backButton: {
+        marginTop: 20,
+        padding: 10,
+        color: '#ff914d',        
     },
 });

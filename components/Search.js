@@ -57,7 +57,7 @@ export default function ViewQuestions() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f4f4e2',
+        backgroundColor: '#fff3e0',
         padding: 16,
     },
     header: {
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 16,
         textAlign: 'center',
+        color: '#000',
     },
     searchBar: {
         marginBottom: 12,
@@ -81,5 +82,17 @@ const styles = StyleSheet.create({
     },
     questionText: {
         fontSize: 16,
+        color: '#000',
+    },
+    button: {
+        marginTop: 20,
+        borderRadius: 8,
+        padding: 8,
+        alignSelf: 'center',
+        width: '80%',
+    },
+    buttonLabel: {
+        color: '#fff',
+        fontWeight: 'bold',
     },
 });
