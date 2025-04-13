@@ -39,14 +39,17 @@ export default function Folder({route}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f4f4e2',
-        padding: 16,
+        backgroundColor: '#ffe0b2', 
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
     },
     header: {
-        fontSize: 24,
+        fontSize: 32,
         fontWeight: 'bold',
-        marginBottom: 16,
+        marginBottom: 20,
         textAlign: 'center',
+        color: '#000',
     },
     searchBar: {
         marginBottom: 12,
@@ -63,5 +66,27 @@ const styles = StyleSheet.create({
     },
     questionText: {
         fontSize: 16,
+    },
+    label: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginVertical: 10,
+        color: '#000',
+    },
+    input: {
+        height: 50,
+        borderColor: '#000',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        backgroundColor: '#fff',
+        width: '80%',
+        marginBottom: 20,
+    },
+    button: {
+        marginTop: 10,
+        width: '80%', 
+        padding: 10,
+        borderRadius: 5,
     },
 });
