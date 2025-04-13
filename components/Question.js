@@ -27,10 +27,16 @@ export default function Folder({route}) {
     return (
         <View style={styles.container}>
             {/* <Text style={styles.header}>{'Q: ' + question.text}</Text> */}
-            <Text>Q: </Text>
-            <TextInput value={text} onChangeText={text => setText(text)}/>
-            <Text>A: </Text>
-            <TextInput value={answer} onChangeText={answer => setAnswer(answer)}/>
+            <Text style={{fontSize: 28,
+        fontWeight: 'bold',
+        color: '#000',
+        marginBottom: 20,}}>Q: </Text>
+            <TextInput style={styles.input} value={text} onChangeText={text => setText(text)}/>
+            <Text style={{fontSize: 28,
+        fontWeight: 'bold',
+        color: '#000',
+        marginBottom: 20,}}>A: </Text>
+            <TextInput style={styles.input} value={answer} onChangeText={answer => setAnswer(answer)}/>
             <Button mode='outlined' onPress={() => {handleSaveQuestion()}}>Save Question</Button>
         </View>
     );

@@ -43,17 +43,29 @@ export default function HomeScreen({route}) {
                 </View>
                 
             )}
-            
-        <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('AddTextQuestion',{username:username})}}>Add text question</Button>
-        <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('AddFolder',{username:username})}}>Add folder</Button>
-        <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('Search',{username:username})}}>Search</Button>
+        
+        <View style={{flexDirection: 'row',marginTop:300}}>
+            <View style={styles.buttonBox}>
+                <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('AddTextQuestion',{username:username})}}>➕</Button>
+            </View>
+
+            <View style={styles.buttonBox}>
+            <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('AddFolder',{username:username})}}>📁</Button>
+            </View>
+
+            <View style={styles.buttonBox}>
+            <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('Search',{username:username})}}>🔎</Button>
+            </View>
+        </View>
+        
+    
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#ffa94d",
+        backgroundColor: "#ffe0b2",
         justifyContent: "center",
         alignItems: "center",
         flex: 1,
@@ -61,7 +73,7 @@ const styles = StyleSheet.create({
     },
     folderButton: {
         marginVertical: 8,
-        width: '100%'
+        width: '100%',
     },
     buttonRow: {
         marginTop: 30,
@@ -73,5 +85,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#000',
         marginBottom: 20,
+    },
+    buttonBox:{
+        margin:10
     }
 })

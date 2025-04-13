@@ -30,17 +30,22 @@ export default function AddTextQuestion({route}) {
 
     return (
         <View style={styles.container}>
-            <Text>Add Text Question</Text>
+            <Text style={{fontSize: 28,
+        fontWeight: 'bold',
+        color: '#000',
+        marginBottom: 20,}}>Add Text Question</Text>
             <View style={styles.textInputContainer}>
-                <TextInput label='Question' value={text} onChangeText={text => setText(text)}/>
+                <TextInput style={styles.input} label='Question' value={text} onChangeText={text => setText(text)}/>
             </View>
             <View style={styles.textInputContainer}>
-                <TextInput label='Folder' value={folder} onChangeText={folder => setFolder(folder)}/>
+                <TextInput style={styles.input} label='Folder' value={folder} onChangeText={folder => setFolder(folder)}/>
             </View>
-            <Text>{text}</Text>
-            <Text>{folder}</Text>
-            <Button mode='outlined' onPress={() => {handleSaveQuestion()}}>Save Question</Button>
-            <Button mode='outlined' onPress={()=>{navigation.navigate('HomeScreen')}}>Back To Home</Button>
+            <View style={styles.buttonBox}>
+                <Button mode='outlined' textColor="#000" onPress={() => {handleSaveQuestion()}}>Save Question</Button>
+            </View>
+            
+            
+            <Button mode='outlined' textColor="#000" onPress={()=>{navigation.navigate('HomeScreen')}}>Back To Home</Button>
             
         
         </View>
@@ -85,5 +90,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
     },
+    buttonBox:{
+        margin:10
+    }
     
 })

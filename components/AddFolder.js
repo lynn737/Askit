@@ -28,14 +28,22 @@ export default function AddTextQuestion({route}) {
 
     return (
         <View style={styles.container}>
-            <Text>Add Folder</Text>
+            <Text style={{fontSize: 28,
+        fontWeight: 'bold',
+        color: '#000',
+        marginBottom: 20,}}>Add Folder</Text>
             <View style={styles.textInputContainer}>
-                <TextInput label='Folder Name' value={name} onChangeText={name => setName(name)}/>
+                <TextInput style={styles.input} label='Folder Name' value={name} onChangeText={name => setName(name)}/>
             </View>
             
-            <Text>{name}</Text>
-            <Button mode='outlined' onPress={() => {handleSaveFolder()}}>Save Folder</Button>
-            <Button mode='outlined' onPress={()=>{navigation.navigate('HomeScreen')}}>Back To Home</Button>
+            <View style={{margin:10}}>
+                <Button mode='outlined' textColor="#000" onPress={() => {handleSaveFolder()}}>Save Folder</Button>
+            </View>
+            <View style={{margin:10}}>
+                <Button mode='outlined'textColor="#000" onPress={()=>{navigation.navigate('HomeScreen')}}>Back To Home</Button>
+            </View>
+            
+            
             
         
         </View>
@@ -47,12 +55,14 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         justifyContent: 'center',
+        alignItems:'center',
         backgroundColor: '#ffe0b2',
     },
     textInputContainer: {
         height: 100,
         width: 200,
         marginBottom: 15,
+        justifyContent: 'center',
     },
     header: {
         fontSize: 32,

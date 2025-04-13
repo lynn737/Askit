@@ -57,7 +57,7 @@ export default function ViewQuestions() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff3e0',
+        backgroundColor: '#ffe0b2',
         padding: 16,
     },
     header: {
