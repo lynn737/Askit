@@ -4,7 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Button, Searchbar } from 'react-native-paper';
 import supabase from '../SupabaseClient';
 
-export default function ViewQuestions() {
+export default function ViewQuestions({route}) {
+    const {username}=route.params
     const [questions, setQuestions] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const navigation = useNavigation();
